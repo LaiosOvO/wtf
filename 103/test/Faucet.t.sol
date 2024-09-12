@@ -49,11 +49,15 @@ contract FaucetTest is Test {
 
         vm.startPrank(User);
         uint256 bb = token.balanceOf(User);
+        uint256 bfb = token.balanceOf(address(faucet));
         faucet.requestTokens();
         uint256 ab = token.balanceOf(User);
+        uint256 afb = token.balanceOf(address(faucet));
 
         console.log(bb);
         console.log(ab);
+        console.log(bfb);
+        console.log(afb);
 
         vm.expectRevert();
         faucet.requestTokens();
