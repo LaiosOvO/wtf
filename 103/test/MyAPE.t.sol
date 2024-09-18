@@ -16,12 +16,10 @@ contract MyAPETest is Test {
         DeployMyAPE deploy = new DeployMyAPE();
         ape = deploy.run();
 
-        vm.startPrank(0xf2DC720aE2096aF65a203C1ecfDe61fEaceE1035);
+        vm.startPrank(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
         console.log(msg.sender);
-        ape.safeMint(0xf2DC720aE2096aF65a203C1ecfDe61fEaceE1035);
-        ape.safeMint(0xf2DC720aE2096aF65a203C1ecfDe61fEaceE1035);
-        ape.safeMint(0xf2DC720aE2096aF65a203C1ecfDe61fEaceE1035);
-        ape.safeMint(0xf2DC720aE2096aF65a203C1ecfDe61fEaceE1035);
+        ape.safeMint(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
+        ape.safeMint(0x5f5e87Da0cE80C1caaf328047BEF97cac12b7A90);
         ape.safeMint(0x5f5e87Da0cE80C1caaf328047BEF97cac12b7A90);
 
         uint256 balance = ape.balanceOf(0x5f5e87Da0cE80C1caaf328047BEF97cac12b7A90);
@@ -35,7 +33,10 @@ contract MyAPETest is Test {
 
     }
 
-    function testApe() public {}
+    function testApe() public {
+        
+
+    }
 
 
 }
