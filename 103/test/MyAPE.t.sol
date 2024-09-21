@@ -10,7 +10,6 @@ contract MyAPETest is Test {
 
     MyAPE ape;
 
-
     function setUp() public {
         
         DeployMyAPE deploy = new DeployMyAPE();

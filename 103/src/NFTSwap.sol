@@ -44,6 +44,7 @@ contract NFTSwap is IERC721Receiver {
     mapping(address => mapping(uint256 => Order)) public nftList;
 
     fallback() external payable {}
+    receive() external payable {}
 
     function list( address _nftAddress , uint256 _tokenId , uint256 _price ) public {
         IERC721 _nft = IERC721(_nftAddress);
@@ -74,7 +75,7 @@ contract NFTSwap is IERC721Receiver {
         _nft.safeTransferFrom(address(this), msg.sender, _tokenId);
         // 
         payable(_order.owner).transfer(_order.price);
-        payable(msg.sender).tranfer(msg.value - _order.price);
+        payable(msg.sender).transfer(msg.value - _order.price);
 
         delete nftList[_nftAddr][_tokenId];
 

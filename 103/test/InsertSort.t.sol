@@ -9,20 +9,22 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 contract InsertSortTest is Test {
 
 
-    function setUp(){
+    function setUp() public {
 
     }
 
 
-function insertSort(uint256[] memory arr) public returns(uint256[] memory){
-    for( uint256 i=1 ,i < arr length , i+t ){
-        uint256 tmp = arr[i];
-        uint256 j= i;
-        while( j>0 && tmp < arr[j-1] ){
-            arrl[j] = arr[j-1];
-            j--;
+    function insertSort(uint256[] memory arr) public returns(uint256[] memory){
+        for( uint256 i=1 ;i < arr.length; i++ ){
+            uint256 tmp = arr[i];
+            uint256 j= i;
+            while( j>0 && tmp < arr[j-1] ){
+                arr[j] = arr[j-1];
+                j--;
+            }
+            arr[j] = tmp;
         }
-        arr[j] = tmp;
+        return arr;
     }
-    return arr;
+
 }
