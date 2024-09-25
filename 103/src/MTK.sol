@@ -13,3 +13,13 @@ contract MTK is ERC20 {
         _mint(msg.sender, initialSupply);
     }
 }
+
+contract MTK2 is ERC20 {
+
+    address public owner;
+
+    constructor(uint256 initialSupply,address _owner) ERC20("MyToken", "MTK") {
+        owner = _owner;
+        _mint(_owner, initialSupply);
+    }
+}
