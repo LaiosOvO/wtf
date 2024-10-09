@@ -7,7 +7,7 @@ import {MTK} from "../src/MTK.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 
-contract DeployAirdrop is Script {
+contract DeployAirdrop is Script {  
 
 
     function setUp() public {

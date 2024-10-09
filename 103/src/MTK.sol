@@ -6,9 +6,11 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract MTK is ERC20 {
 
+    event Mint(address owner);
     address public owner;
 
     constructor(uint256 initialSupply) ERC20("MyToken", "MTK") {
+        emit Mint(msg.sender);
         owner = msg.sender;
         _mint(msg.sender, initialSupply);
     }
